@@ -109,7 +109,7 @@ resource "google_dataproc_cluster" "mulitnode_spark_cluster" {
 
     master_config {
       num_instances = 1
-      machine_type  = "e2-standard-2"
+      machine_type  = "n2-standard-2"
       disk_config {
         boot_disk_type    = "pd-ssd"
         boot_disk_size_gb = 30

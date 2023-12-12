@@ -12,6 +12,7 @@
 
 ### Eventsim
 - If you start with a high number of users - 2-3 Million+, then eventsim sometimes might not startup and get stuck at generating events. Lower the number of users. Start two parallel processes with users divided.
+
 ### Spark
 
 - > Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.

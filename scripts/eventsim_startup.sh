@@ -14,7 +14,7 @@ docker run -itd \
     -c "examples/example-config.json" \
     --start-time "`date +"%Y-%m-%dT%H:%M:%S"`" \
     --end-time "`date -d "+1 days" +"%Y-%m-%dT%H:%M:%S"`" \
-    --nusers 1000000 \
+    --nusers 100000 \
     --growth-rate 10 \
     --userid 1 \
     --kafkaBrokerList localhost:9092 \

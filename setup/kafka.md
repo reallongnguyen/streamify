@@ -38,7 +38,7 @@ We will setup Kafka and eventsim in two separate docker processes in a dedicated
   ```bash
   cd ~/streamify/kafka && \
   docker-compose build && \
-  docker-compose up 
+  docker-compose up -d
   ```
 
   **Note**: Sometimes the `broker` & `schema-registry` containers die during startup. You should just stop all the containers with `docker-compose down` and then rerun `docker-compose up`.
