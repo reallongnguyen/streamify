@@ -34,6 +34,7 @@ We will start the Spark Streaming process in the DataProc cluster we created to 
   ```bash
   spark-submit \
   --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 \
+  --conf spark.yarn.submit.waitAppCompletion=false \
   stream_all_events.py
   ```
 
