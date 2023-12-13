@@ -23,8 +23,8 @@ We will start the Spark Streaming process in the DataProc cluster we created to 
   - Name of your GCS bucket. (What you gave during the terraform setup)
 
     ```bash
-    export KAFKA_ADDRESS=IP.ADD.RE.SS
-    export GCP_GCS_BUCKET=bucket-name
+    export KAFKA_ADDRESS=35.225.147.122
+    export GCP_GCS_BUCKET=isling-streamify
     ```
 
      **Note**: You will have to setup these env vars every time you create a new shell session. Or if you stop/start your cluster

@@ -18,24 +18,14 @@ java --version
 rm openjdk-11.0.2_linux-x64_bin.tar.gz
 
 echo "Downloading Spark..."
-wget https://archive.apache.org/dist/spark/spark-3.0.3/spark-3.0.3-bin-hadoop3.2.tgz
+wget https://dlcdn.apache.org/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz
 
-echo "Extracting Spark..."
-tar xzfv spark-3.0.3-bin-hadoop3.2.tgz
-rm spark-3.0.3-bin-hadoop3.2.tgz
+tar xvf spark-3.5.0-bin-hadoop3.tgz
+sudo mv spark-3.5.0-bin-hadoop3/ /opt/spark
 
 echo "Exporting Spark Home..."
 echo '' >> ~/.bashrc
-echo 'export SPARK_HOME="${HOME}/spark/spark-3.0.3-bin-hadoop3.2"' >> ~/.bashrc
-echo 'export PATH="${SPARK_HOME}/bin:${PATH}"' >> ~/.bashrc
+echo 'export SPARK_HOME=/opt/spark' >> ~/.bashrc
+echo 'export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin' >> ~/.bashrc
+echo 'export PYSPARK_PYTHON=/usr/bin/python3' >> ~/.bashrc
 eval "$(cat ~/.bashrc | tail -n +10)" # A hack because source .bashrc doesn't work inside the script
-
-
-echo "Setting up Pyspark"
-#Get correct name for py4j library
-py4j="$(basename ${SPARK_HOME}/python/lib/py4j*)"
-echo "py4j versions is $py4j"
-
-echo '' >> ~/.bashrc
-echo 'export PYTHONPATH="${SPARK_HOME}/python/:$PYTHONPATH"' >> ~/.bashrc
-echo 'export PYTHONPATH="${SPARK_HOME}/python/lib/${!py4j}:$PYTHONPATH"' >> ~/.bashrc
